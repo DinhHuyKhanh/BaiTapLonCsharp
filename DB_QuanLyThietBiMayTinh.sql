@@ -14,7 +14,7 @@ CREATE TABLE tblMatHang(
 	sMauSac NVARCHAR(50),
 	sKichThuoc NVARCHAR(50),
 	sMoTaChiTiet NVARCHAR(100),
-	fGiaBan FLOAT, 
+	fGiaBan FLOAT NOT NULL, 
 	iSoLuong int DEFAULT (0)
 	FOREIGN KEY (iMaLH) REFERENCES tblLoaiHang(iMaLH)
 )
