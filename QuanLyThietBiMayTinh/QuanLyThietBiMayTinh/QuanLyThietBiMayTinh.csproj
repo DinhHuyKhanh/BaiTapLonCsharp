@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMQuanLyHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMQuanLyHoaDonNhap.Designer.cs">
+      <DependentUpon>FRMQuanLyHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoaiHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
