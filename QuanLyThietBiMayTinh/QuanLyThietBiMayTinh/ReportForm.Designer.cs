@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyThietBiMayTinh
 {
-    partial class MatHangReport
+    partial class ReportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,14 +43,14 @@ namespace QuanLyThietBiMayTinh
             this.crystalReportViewer1.Size = new System.Drawing.Size(1176, 603);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // MatHangReport
+            // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 603);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "MatHangReport";
-            this.Text = "MatHangReport";
+            this.Name = "ReportForm";
+            this.Text = "Report";
             this.Load += new System.EventHandler(this.MatHangReport_Load);
             this.ResumeLayout(false);
 
