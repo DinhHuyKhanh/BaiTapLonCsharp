@@ -14,7 +14,7 @@ CREATE TABLE tblMatHang(
 	sMauSac NVARCHAR(50),
 	sKichThuoc NVARCHAR(50),
 	sMoTaChiTiet NVARCHAR(100),
-	fGiaBan FLOAT, 
+	fGiaBan FLOAT NOT NULL, 
 	iSoLuong int DEFAULT (0)
 	FOREIGN KEY (iMaLH) REFERENCES tblLoaiHang(iMaLH)
 )
@@ -55,10 +55,12 @@ CREATE TABLE tblHoaDonBan(
 GO
 
 CREATE TABLE tblChiTietHoaDonBan(
-	iMaHD INT NOT NULL,
-	iMaMH INT NOT NULL,
-	iSoLuong INT NOT NULL,
-	fThanhTien FLOAT DEFAULT (0),
+	iMaHD		INT NOT NULL,
+	iMaMH		INT NOT NULL,
+	iSoLuong	INT NOT NULL,
+	fThanhTien	FLOAT DEFAULT (0),
+	iBaoHanh	INT NOT NULL,
+	sGhiChu		NVARCHAR(256),
 	PRIMARY KEY(iMaHD, iMaMH),
 	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonban(iMaHD),
 	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH)
@@ -150,6 +152,8 @@ GO
 INSERT INTO tblHoaDonBan(iMaNV)
 VALUES (1)
 GO
+INSERT INTO tblChiTietHoaDonBan(iMaHD, iMaMH, iSoLuong, iBaoHanh)
+VALUES (1,1,3, 12)
 INSERT INTO tblChiTietHoaDonBan(iMaHD, iMaMH, iSoLuong)
 VALUES (1,1,3)
 GO
