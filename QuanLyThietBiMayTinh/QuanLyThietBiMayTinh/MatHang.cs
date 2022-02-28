@@ -245,10 +245,26 @@ namespace QuanLyThietBiMayTinh
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            Form f = findForm("HangHoareport");
+            string filter = "{tblMatHang.iMaMH}>0";
+            if (!string.IsNullOrEmpty(comboBox1.Text.Trim()))
+                filter += string.Format(" AND {1} like '*{0}*'", comboBox1.Text, "{tblLoaiHang.sTenHang}");
+            if (!string.IsNullOrEmpty(txtTenMH.Text.Trim()))
+                filter += string.Format(" AND {1} like '*{0}*'", txtTenMH.Text, "{tblMatHang.sTenHH}");
+            if (!string.IsNullOrEmpty(txtMoTa.Text.Trim()))
+                filter += string.Format(" AND {1} like '*{0}*'", txtMoTa.Text, "{tblMatHang.sMoTaChiTiet}");
+            if (!string.IsNullOrEmpty(txtMau.Text.Trim()))
+                filter += string.Format(" AND {1} like '*{0}*'", txtMau.Text, "{tblMatHang.sMauSac}");
+            if (!string.IsNullOrEmpty(txtKichThuoc.Text.Trim()))
+                filter += string.Format(" AND {1} like '*{0}*'", txtKichThuoc.Text, "{tblMatHang.sKichThuoc}");
+            if (!string.IsNullOrEmpty(txtGia.Text.Trim()))
+                filter += string.Format(" AND {1} like '*{0}*'", txtGia.Text, "{tblMatHang.fGiaBan}");
+
+
+            ReportForm f = findForm("MatHangReport") as ReportForm;
             if (f == null)
-                f = new MatHangReport();
+                f = new ReportForm();
             f.Show();
+            f.showReport("MatHangReport.rpt", filter, "Danh sách mặt hàng");
             f.Activate();
         }
     }

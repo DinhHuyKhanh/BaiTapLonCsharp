@@ -6,7 +6,6 @@ D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCshar
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.exe
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.pdb
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.MatHang.resources
-D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.MatHangReport.resources
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.CopyComplete
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.exe.config
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.exe
@@ -31,6 +30,7 @@ D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCshar
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\stdole.dll
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.Menu.resources
+<<<<<<< HEAD
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.AssemblyReference.cache
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.LoaiHangForm.resources
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.MatHang.resources
@@ -64,3 +64,6 @@ E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\Cr
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommonControls.dll
+=======
+D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.ReportForm.resources
+>>>>>>> b72240171d2f4f92132befae4a666c416f5297fe
