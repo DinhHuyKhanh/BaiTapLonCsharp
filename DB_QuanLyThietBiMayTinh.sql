@@ -154,8 +154,6 @@ VALUES (1)
 GO
 INSERT INTO tblChiTietHoaDonBan(iMaHD, iMaMH, iSoLuong, iBaoHanh)
 VALUES (1,1,3, 12)
-INSERT INTO tblChiTietHoaDonBan(iMaHD, iMaMH, iSoLuong)
-VALUES (1,1,3)
 GO
 SELECT* FROM tblChiTietHoaDonNhap
 SELECT * FROM tblHoaDonNhap
@@ -163,22 +161,22 @@ SELECT * FROM tblMatHang
 SELECT * FROM tblHoaDonBan
 SELECT * FROM tblChiTietHoaDonBan
 select * from tblLoaiHang
-
+GO
 create proc prLayLoaiHang
 as
 begin
 select * from tblLoaiHang
 end
-
+GO
 create proc prThemLoaiHang(@tenhang nvarchar(50))
 as
 begin
 	insert into tblLoaiHang(sTenHang)
 	values (@tenhang)
 end
-
+GO
 exec prThemLoaiHang 'Ram'
-
+GO
 create proc prSuaLoaiHang(@maLh int, @tenhang nvarchar(50))
 as
 begin
@@ -186,14 +184,14 @@ begin
 	set sTenHang=@tenhang
 	where iMaLH=@maLh
 end
-
+GO
 create proc prXoaLoaiHang(@maLh int)
 as
 begin
 	delete from tblLoaiHang
 	where iMaLH=@maLh
 end
-
+GO
 create proc prThemMatHang(@tenloaihang nvarchar(50), @tenHH nvarChar(50),@mau nvarChar(50),@kichthuoc nvarChar(50),@mota nvarChar(50), @giaban float)
 as
 begin
@@ -202,7 +200,7 @@ select @maLH=iMaLH from tblLoaiHang where sTenHang=@tenloaihang
 insert into tblMatHang(iMaLH,sTenHH,sMauSac,sKichThuoc,sMoTaChiTiet,fGiaBan)
 values (@maLH,@tenHH,@mau,@kichthuoc,@mota,@giaban)
 end
-
+GO
 create proc prHienMatHang
 as
 begin
@@ -212,10 +210,10 @@ where tblLoaiHang.iMaLH=tblMatHang.iMaLH
 end
 
 
-
+GO
 exec prHienMatHang
 
-
+GO
 create proc prSuaMatHang(@mahang int,@tenloaihang nvarchar(50), @tenHH nvarChar(50),@mau nvarChar(50),@kichthuoc nvarChar(50),@mota nvarChar(50), @giaban float)
 as
 begin
@@ -225,7 +223,7 @@ update tblMatHang
 set iMaLH=@maLH,sTenHH=@tenHH,sMauSac=@mau,sKichThuoc=@kichthuoc,sMoTaChiTiet=@mota,fGiaBan=@giaban
 where iMaMH=@mahang
 end
-
+GO
 create proc prXoaMatHang(@maMH int)
 as
 begin
