@@ -71,6 +71,8 @@ namespace QuanLyThietBiMayTinh
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "\"\""});
             this.comboBox1.Location = new System.Drawing.Point(170, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
@@ -189,9 +191,9 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(428, 214);
+            this.btnTim.Location = new System.Drawing.Point(421, 214);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 36);
+            this.btnTim.Size = new System.Drawing.Size(98, 36);
             this.btnTim.TabIndex = 15;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
