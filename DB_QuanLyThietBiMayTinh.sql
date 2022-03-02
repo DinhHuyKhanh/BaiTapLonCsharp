@@ -230,3 +230,34 @@ begin
 delete from tblMatHang
 where iMaMH=@maMH;
 end
+GO
+CREATE PROC prInsertHoaDonNhap(
+	@tenNCC NVARCHAR(100),
+	@iMaNV	INT)
+	AS
+	BEGIN
+		INSERT INTO tblHoaDonNhap(iMaNV, sNCC)
+		VALUES (@iMaNV, @tenNCC)
+	END
+GO
+CREATE PROC prDeleteHoaDonNhap(@iMaHD	INT)
+	AS
+	BEGIN
+		DELETE FROM tblHoaDonNhap 
+		WHERE iMaHD = @iMaHD
+	END
+GO
+CREATE PROC prUpdateHoaDonNhap(@sNCC NVARCHAR(100), @iMaHD INT)
+	AS
+	BEGIN
+		UPDATE tblHoaDonNhap
+		SET sNCC = @sNCC
+		WHERE iMaHD = @iMaHD
+	END
+GO
+CREATE VIEW vwHoaDonNhap
+AS
+		SELECT  a.iMaHD, a.sNCC, a.dNgayTao, a.fTongTien, b.sTen
+		FROM tblHoaDonNhap a, tblNhanVien b
+		WHERE  a.iMaNV = b.iMaNV
+GO

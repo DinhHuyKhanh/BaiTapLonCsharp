@@ -54,6 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMQuanLyHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMQuanLyHoaDonNhap.Designer.cs">
+      <DependentUpon>FRMQuanLyHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonNhapAdapter.cs" />
+    <Compile Include="HoaDonNhapDTO.cs" />
     <Compile Include="LoaiHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +74,8 @@
     <Compile Include="MatHang.Designer.cs">
       <DependentUpon>MatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienDTO.cs" />
+    <Compile Include="NhanVienAdapter.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +96,9 @@
       <DependentUpon>MatHangReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FRMQuanLyHoaDonNhap.resx">
+      <DependentUpon>FRMQuanLyHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoaiHangForm.resx">
       <DependentUpon>LoaiHangForm.cs</DependentUpon>
     </EmbeddedResource>
