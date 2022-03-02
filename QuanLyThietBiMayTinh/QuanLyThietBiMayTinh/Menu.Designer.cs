@@ -31,6 +31,7 @@ namespace QuanLyThietBiMayTinh
         {
             this.btnLoaiHang = new System.Windows.Forms.Button();
             this.btnMatHang = new System.Windows.Forms.Button();
+            this.btnHDN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoaiHang
@@ -53,11 +54,22 @@ namespace QuanLyThietBiMayTinh
             this.btnMatHang.UseVisualStyleBackColor = true;
             this.btnMatHang.Click += new System.EventHandler(this.btnMatHang_Click);
             // 
+            // btnHDN
+            // 
+            this.btnHDN.Location = new System.Drawing.Point(101, 293);
+            this.btnHDN.Name = "btnHDN";
+            this.btnHDN.Size = new System.Drawing.Size(236, 74);
+            this.btnHDN.TabIndex = 2;
+            this.btnHDN.Text = "Hóa Đơn Nhập";
+            this.btnHDN.UseVisualStyleBackColor = true;
+            this.btnHDN.Click += new System.EventHandler(this.btnHDN_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 571);
+            this.Controls.Add(this.btnHDN);
             this.Controls.Add(this.btnMatHang);
             this.Controls.Add(this.btnLoaiHang);
             this.Name = "Menu";
@@ -70,5 +82,6 @@ namespace QuanLyThietBiMayTinh
 
         private System.Windows.Forms.Button btnLoaiHang;
         private System.Windows.Forms.Button btnMatHang;
+        private System.Windows.Forms.Button btnHDN;
     }
 }
