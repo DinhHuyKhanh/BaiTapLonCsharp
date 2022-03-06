@@ -14,34 +14,23 @@ namespace QuanLyThietBiMayTinh
 {
     public partial class FRMQuanLyHoaDonNhap : Form
     {
-        private Dictionary<string, int> dictNv;
         private NhanVienAdapter nhanVienAdapter;
         private HoaDonNhapAdapter hoaDonNhapAdapter;
         public FRMQuanLyHoaDonNhap()
         {
             this.nhanVienAdapter = new NhanVienAdapter();
             hoaDonNhapAdapter = new HoaDonNhapAdapter();
-            this.dictNv = new Dictionary<string, int>();
       
             InitializeComponent();
         }
-
-        private void ListNV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //ListNV.SelectedIndex();
-        }
         private void fillComBoBox()
         {
-            List<NhanVienDTO> nhanViens = new List<NhanVienDTO>();
-            nhanViens = nhanVienAdapter.getAll();
-            ListNV.DataSource = nhanViens;
-            ListNV.DisplayMember = "TenNV";
-            ListNV.ValueMember = "SDT";
-            foreach(NhanVienDTO nv in nhanViens)
-            {
-                dictNv.Add(nv.SDT, nv.MaNV);
-            }
-        }
+            DataTable tblnhanVien = nhanVienAdapter.findAllNV();
+            DataView dvNV = new DataView(tblnhanVien);
+            ListNV.DataSource = dvNV;
+            ListNV.DisplayMember = "sTen";
+            ListNV.ValueMember = "iMaNV";
+        } 
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -71,13 +60,15 @@ namespace QuanLyThietBiMayTinh
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int iMaNV = dictNv[ListNV.SelectedValue.ToString()];
+            int iMaNV = int.Parse( ListNV.SelectedValue.ToString());
             string tenNCC = txtTenNCC.Text;
             int result = hoaDonNhapAdapter.create(iMaNV, tenNCC);
             if (result == 0)
             {
                 MessageBox.Show("Bạn đã thêm 1 hóa đơn mới");
                 loadListHoaDon();
+                txtTenNCC.Text = "";
+
             }
             else
             {
@@ -91,10 +82,7 @@ namespace QuanLyThietBiMayTinh
             fillComBoBox();
         }
 
-        private void listHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void loadListHoaDon()
         {
@@ -126,6 +114,24 @@ namespace QuanLyThietBiMayTinh
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private Form findForm(string formName)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f.Name.Equals(formName))
+                    return f;
+            return null;
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            int iMaHD = (int)grxlistHoaDon.Rows[grxlistHoaDon.CurrentRow.Index].Cells[0].Value;
+            Form f = findForm("FRMQuanLyChiTietHoaDonNhap");
+            if (f == null)
+                f = new FRMQuanLyChiTietHoaDonNhap(iMaHD);
+            this.Close();
+            f.Show();
         }
     }
 }

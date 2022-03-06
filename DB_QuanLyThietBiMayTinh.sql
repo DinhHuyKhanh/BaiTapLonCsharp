@@ -70,7 +70,7 @@ GO
 
 CREATE TRIGGER trThemChiTietNhap
 ON tblChiTietHoaDonNhap
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 	BEGIN
 		DECLARE @iMaHD INT,
@@ -101,9 +101,24 @@ AS
 		WHERE a.iMaMH = @iMaMH
 	END
 GO
+ALTER TRIGGER trDeleteChiTietNhap
+ON tblChiTietHoaDonNhap
+AFTER DELETE
+AS
+	BEGIN
+		DECLARE @iMaHD INT,
+				@fTongTien FLOAT
+		SELECT @iMaHD = iMaHD
+		FROM deleted;
+		SELECT @fTongTien = IsNull(SUM(fThanhTien),0) FROM tblChiTietHoaDonNhap WHERE iMaHD = @iMaHD
+		UPDATE tblHoaDonNhap
+		SET fTongTien = @fTongTien
+		WHERE iMaHD = @iMaHD
+	END
+GO
 CREATE TRIGGER trThemChiTietBan
 ON tblChiTietHoaDonBan
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 	BEGIN
 		DECLARE @iMaHD INT,
@@ -261,3 +276,91 @@ AS
 		FROM tblHoaDonNhap a, tblNhanVien b
 		WHERE  a.iMaNV = b.iMaNV
 GO
+CREATE VIEW vwChiTietHoaDonNhap
+AS
+	SELECT a.iMaHD, a.iMaMH, b.iMaLH, c.sTen as 'tenNVNhap', c.sNCC , b.sTenHH, a.iSoLuong, a.fDonGia, a.fThanhTien
+	FROM tblChiTietHoaDonNhap a
+	INNER JOIN tblMatHang b
+	ON a.iMaMH = b.iMaMH
+	INNER JOIN vwHoaDonNhap c
+	ON c.iMaHD = a.iMaHD
+	
+GO
+
+CREATE PROC prViewChiTietHDNhap
+AS
+	SELECT * FROM  vwChiTietHoaDonNhap
+END
+GO
+CREATE PROC prViewdeltailHDNhap(@iMaHD INT)
+AS
+	IF @iMaHD != 0
+		SELECT * FROM  vwChiTietHoaDonNhap
+		WHERE iMaHD = @iMaHD
+	ELSE
+		SELECT * FROM  vwChiTietHoaDonNhap
+GO
+CREATE PROC prViewLoaiHang
+AS 
+	SELECT iMaLH, sTenHang
+	FROM tblLoaiHang 
+GO
+CREATE PROC prViewMatHang(@iMaLH INT)
+AS 
+	SELECT iMaMH, sTenHH
+	FROM tblMatHang
+	WHERE iMaLH = @iMaLH
+SELECT * FROM tblChiTietHoaDonNhap
+GO
+CREATE  PROC prInsertChiTietHoaDonNhap(@iMaMH INT, @iSoLuong INT, @iMaHD INT, @fGiaNhap FLOAT)
+AS
+	INSERT INTO tblChiTietHoaDonNhap(iMaMH, iSoLuong, iMaHD, fDonGia)
+	VALUES(@iMaMH, @iSoLuong, @iMaHD, @fGiaNhap)
+GO
+CREATE PROC prUpdateChiTietHDNhap(@iMaHD INT, @iMaMH INT, @iSoLuong INT, @fDonGia FLOAT)
+AS
+	UPDATE tblChiTietHoaDonNhap
+	SET iSoLuong = @iSoLuong, fDonGia = @fDonGia
+	WHERE iMaHD = @iMaHD AND iMaMH = @iMaMH
+
+GO
+CREATE PROC prSelectRowChiTietHDNhap(@iMaHD INT, @iMaMH INT)
+AS
+	SELECT * FROM  tblChiTietHoaDonNhap
+	WHERE iMaMH= @iMaMH AND  iMaHD = @iMaHD
+GO
+CREATE PROC prDeleteRowChiTietHDNhap(@iMaHD INT, @iMaMH INT)
+AS
+	DELETE tblChiTietHoaDonNhap
+	WHERE iMaMH= @iMaMH AND  iMaHD = @iMaHD
+GO
+CREATE PROC prFindAllHDBan
+AS
+	SELECT a.iMaHD, b.sTen as 'sTenNv', a.dNgayTao, a.fTongTien
+	FROM tblHoaDonBan a
+	INNER JOIN tblNhanVien b
+	ON a.iMaNV = b.iMaNV
+GO
+CREATE PROC prInsertHDban(@iMaNV INT)
+AS
+	INSERT INTO tblHoaDonBan(iMaNV)
+	VALUES(@iMaNV)
+
+GO
+CREATE PROC prUpdateHDban(@iMaNV INT, @iMaHD INT)
+AS
+	UPDATE tblHoaDonBan
+	SET iMaNV = @iMaNV
+	WHERE iMaHD = @iMaHD
+
+GO
+CREATE PROC prDeleteHDban(@iMaHD INT)
+AS
+	DELETE tblHoaDonBan
+	WHERE iMaHD = @iMaHD
+GO
+CREATE PROC prSearchHDban(@numberMin INT, @numberMax INT)
+AS
+	SELECT * FROM tblHoaDonBan
+	WHERE fTongTien between  @numberMin and @numberMax;
+

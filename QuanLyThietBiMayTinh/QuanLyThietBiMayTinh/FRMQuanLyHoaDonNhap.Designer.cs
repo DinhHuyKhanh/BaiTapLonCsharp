@@ -69,12 +69,12 @@ namespace QuanLyThietBiMayTinh
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListNV.FormattingEnabled = true;
             this.ListNV.Items.AddRange(new object[] {
-            "11111"});
+            "\"\""});
             this.ListNV.Location = new System.Drawing.Point(187, 18);
             this.ListNV.Name = "ListNV";
             this.ListNV.Size = new System.Drawing.Size(419, 24);
+            this.ListNV.Sorted = true;
             this.ListNV.TabIndex = 1;
-            this.ListNV.SelectedIndexChanged += new System.EventHandler(this.ListNV_SelectedIndexChanged);
             // 
             // lbNCC
             // 
@@ -114,7 +114,6 @@ namespace QuanLyThietBiMayTinh
             this.grxlistHoaDon.RowTemplate.Height = 24;
             this.grxlistHoaDon.Size = new System.Drawing.Size(952, 319);
             this.grxlistHoaDon.TabIndex = 4;
-            this.grxlistHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listHoaDon_CellContentClick);
             // 
             // MaHD
             // 
@@ -218,6 +217,7 @@ namespace QuanLyThietBiMayTinh
             this.btnXem.TabIndex = 10;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnExit
             // 
