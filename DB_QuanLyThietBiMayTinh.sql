@@ -289,6 +289,7 @@ GO
 
 CREATE PROC prViewChiTietHDNhap
 AS
+begin
 	SELECT * FROM  vwChiTietHoaDonNhap
 END
 GO
