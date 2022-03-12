@@ -71,3 +71,4 @@ E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\ob
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMQuanLyHoaDonNhap.resources
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMQuanLyChiTietHoaDonNhap.resources
 E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMHoaDonBan.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMChiTietHoaDonBan.resources

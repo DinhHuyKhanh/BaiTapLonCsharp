@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonNhapDTO.cs" />
+    <Compile Include="FRMChiTietHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>FRMChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
       <DependentUpon>MatHangReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FRMChiTietHoaDonBan.resx">
+      <DependentUpon>FRMChiTietHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMHoaDonBan.resx">
       <DependentUpon>FRMHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
