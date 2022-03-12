@@ -306,6 +306,7 @@ GO
 
 CREATE PROC prViewChiTietHDNhap
 AS
+begin
 	SELECT * FROM  vwChiTietHoaDonNhap
 GO
 CREATE PROC prViewdeltailHDNhap(@iMaHD INT)

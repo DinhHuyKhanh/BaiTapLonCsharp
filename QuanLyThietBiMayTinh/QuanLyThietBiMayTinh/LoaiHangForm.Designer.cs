@@ -70,7 +70,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(156, 138);
+            this.btnSua.Location = new System.Drawing.Point(164, 138);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 34);
             this.btnSua.TabIndex = 5;
@@ -80,7 +80,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(251, 138);
+            this.btnXoa.Location = new System.Drawing.Point(253, 138);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 34);
             this.btnXoa.TabIndex = 6;
@@ -90,6 +90,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -107,7 +108,6 @@ namespace QuanLyThietBiMayTinh
             this.Column1.HeaderText = "Mã loại hàng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
             // 
             // Column2
             // 
@@ -115,11 +115,10 @@ namespace QuanLyThietBiMayTinh
             this.Column2.HeaderText = "Tên loại hàng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 245;
             // 
             // btnBoQua
             // 
-            this.btnBoQua.Location = new System.Drawing.Point(343, 138);
+            this.btnBoQua.Location = new System.Drawing.Point(342, 138);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(75, 34);
             this.btnBoQua.TabIndex = 8;
