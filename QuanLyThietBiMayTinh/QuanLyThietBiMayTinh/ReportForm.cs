@@ -31,7 +31,7 @@ namespace QuanLyThietBiMayTinh
             rpt.Load(path);
             //2.cập nhật nguồn dữ liệu
             TableLogOnInfo logOnInfo = new TableLogOnInfo();
-            logOnInfo.ConnectionInfo.ServerName = ".\\SQLEXPRESS";
+            logOnInfo.ConnectionInfo.ServerName = ".\\MASTER";
             logOnInfo.ConnectionInfo.DatabaseName = "db_QuanLyHangHoa";
 
             foreach (Table t in rpt.Database.Tables)

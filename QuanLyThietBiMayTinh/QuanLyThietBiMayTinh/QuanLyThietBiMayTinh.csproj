@@ -54,6 +54,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonNhapDTO.cs" />
+    <Compile Include="FRMChiTietHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>FRMChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMHoaDonBan.Designer.cs">
+      <DependentUpon>FRMHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMQuanLyChiTietHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMQuanLyChiTietHoaDonNhap.Designer.cs">
+      <DependentUpon>FRMQuanLyChiTietHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMQuanLyHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMQuanLyHoaDonNhap.Designer.cs">
+      <DependentUpon>FRMQuanLyHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonNhapAdapter.cs" />
+    <Compile Include="HoaDonNhapDTO.cs" />
     <Compile Include="LoaiHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +93,8 @@
     <Compile Include="MatHang.Designer.cs">
       <DependentUpon>MatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienDTO.cs" />
+    <Compile Include="NhanVienAdapter.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +115,18 @@
       <DependentUpon>MatHangReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FRMChiTietHoaDonBan.resx">
+      <DependentUpon>FRMChiTietHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMHoaDonBan.resx">
+      <DependentUpon>FRMHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMQuanLyChiTietHoaDonNhap.resx">
+      <DependentUpon>FRMQuanLyChiTietHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMQuanLyHoaDonNhap.resx">
+      <DependentUpon>FRMQuanLyHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoaiHangForm.resx">
       <DependentUpon>LoaiHangForm.cs</DependentUpon>
     </EmbeddedResource>

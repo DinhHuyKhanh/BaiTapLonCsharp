@@ -267,5 +267,10 @@ namespace QuanLyThietBiMayTinh
             f.showReport("MatHangReport.rpt", filter, "Danh sách mặt hàng");
             f.Activate();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -41,5 +41,37 @@ namespace QuanLyThietBiMayTinh
             f.Show();
             f.Activate();
         }
+
+        private void btnHDN_Click(object sender, EventArgs e)
+        {
+            Form f = findForm("FRMQuanLyHoaDonNhap");
+            if (f == null)
+                f = new FRMQuanLyHoaDonNhap();
+            f.Show();
+            f.Activate();
+        }
+
+        private void buttonChiTietHDN_Click(object sender, EventArgs e)
+        {
+            Form f = findForm("FRMQuanLyChiTietHoaDonNhap");
+            if (f == null)
+                f = new FRMQuanLyChiTietHoaDonNhap(0);
+            f.Show();
+
+        }
+
+        private void btnHDBan_Click(object sender, EventArgs e)
+        {
+            Form f = findForm("FRMHoaDonBan");
+            if (f == null)
+                f = new FRMHoaDonBan();
+            f.Show();
+        }
+
+        private void tbnChiTietHoaDonban_Click(object sender, EventArgs e)
+        {
+            Form f = new FRMChiTietHoaDonBan(0);
+            f.Show();
+        }
     }
 }
