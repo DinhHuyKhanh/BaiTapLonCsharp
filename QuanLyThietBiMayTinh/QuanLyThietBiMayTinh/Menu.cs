@@ -67,5 +67,11 @@ namespace QuanLyThietBiMayTinh
                 f = new FRMHoaDonBan();
             f.Show();
         }
+
+        private void tbnChiTietHoaDonban_Click(object sender, EventArgs e)
+        {
+            Form f = new FRMChiTietHoaDonBan(0);
+            f.Show();
+        }
     }
 }

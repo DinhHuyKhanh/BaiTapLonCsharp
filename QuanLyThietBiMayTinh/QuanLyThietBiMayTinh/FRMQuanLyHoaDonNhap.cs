@@ -16,11 +16,13 @@ namespace QuanLyThietBiMayTinh
     {
         private NhanVienAdapter nhanVienAdapter;
         private HoaDonNhapAdapter hoaDonNhapAdapter;
+        private String connectionString;
         public FRMQuanLyHoaDonNhap()
         {
             this.nhanVienAdapter = new NhanVienAdapter();
             hoaDonNhapAdapter = new HoaDonNhapAdapter();
-      
+            connectionString = ConfigurationManager.ConnectionStrings["lienKetSQl"].ConnectionString;
+
             InitializeComponent();
         }
         private void fillComBoBox()
@@ -127,11 +129,37 @@ namespace QuanLyThietBiMayTinh
         private void btnXem_Click(object sender, EventArgs e)
         {
             int iMaHD = (int)grxlistHoaDon.Rows[grxlistHoaDon.CurrentRow.Index].Cells[0].Value;
-            Form f = findForm("FRMQuanLyChiTietHoaDonNhap");
-            if (f == null)
-                f = new FRMQuanLyChiTietHoaDonNhap(iMaHD);
-            this.Close();
+            Form f = new FRMQuanLyChiTietHoaDonNhap(iMaHD);
             f.Show();
+            this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sNCC = txtTenNCC.Text;
+                using (SqlConnection Cnn = new SqlConnection(connectionString))
+                {
+                    Cnn.Open();
+                    using (SqlCommand Cmd = new SqlCommand("prSearchNCC", Cnn))
+                    {
+                        Cmd.CommandType = CommandType.StoredProcedure;
+                        Cmd.Parameters.AddWithValue("@sNCC", sNCC);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(Cmd))
+                        {
+                            DataSet tbl = new DataSet();
+                            adapter.Fill(tbl);
+                            grxlistHoaDon.DataSource = tbl.Tables[0];
+                            Cnn.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xảy ra lỗi không mong muốn vui lòng thử lại sau! ");
+            }
         }
     }
 }

@@ -190,9 +190,12 @@ namespace QuanLyThietBiMayTinh
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnXem_Click(object sender, EventArgs e)
         {
-
+            int iMaHD = int.Parse(grvHDBan.Rows[grvHDBan.CurrentRow.Index].Cells[0].Value.ToString());
+          Form  f = new FRMChiTietHoaDonBan(iMaHD);
+            f.Show();
+            this.Close();
         }
     }
 }

@@ -10,13 +10,13 @@ GO
 CREATE TABLE tblMatHang(
 	iMaMH INT IDENTITY(1,1) PRIMARY KEY,
 	iMaLH INT NOT NULL,
-	sTenHH  NVARCHAR(50) NOT NULL,
+	sTenHH  NVARCHAR(50) NOT NULL UNIQUE,
 	sMauSac NVARCHAR(50),
 	sKichThuoc NVARCHAR(50),
 	sMoTaChiTiet NVARCHAR(100),
-	fGiaBan FLOAT NOT NULL, 
+	fGiaBan FLOAT NOT NULL,
 	iSoLuong int DEFAULT (0)
-	FOREIGN KEY (iMaLH) REFERENCES tblLoaiHang(iMaLH)
+	FOREIGN KEY (iMaLH) REFERENCES tblLoaiHang(iMaLH) ON DELETE NO ACTION
 )
 GO
 CREATE TABLE tblNhanVien(
@@ -31,7 +31,7 @@ CREATE TABLE tblHoaDonNhap(
 	sNCC		NVARCHAR(50) NOT NULL, 
 	dNgayTao	DATETIME DEFAULT GETDATE(),
 	fTongTien	INT DEFAULT (0)
-	FOREIGN KEY (iMaNV) REFERENCES tblNhanVien(iMaNV)
+	FOREIGN KEY (iMaNV) REFERENCES tblNhanVien(iMaNV) ON DELETE NO ACTION
 )
 GO
 CREATE TABLE tblChiTietHoaDonNhap(
@@ -40,9 +40,9 @@ CREATE TABLE tblChiTietHoaDonNhap(
 	iSoLuong INT NOT NULL,
 	fDonGia FLOAT NOT NULL,
 	fThanhTien	FLOAT DEFAULT(0),
-	PRIMARY KEY(iMaHD, iMaMH),
-	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonNhap(iMaHD),
-	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH)
+	UNIQUE(iMaHD, iMaMH),
+	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonNhap(iMaHD) ON DELETE NO ACTION,
+	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH) ON DELETE NO ACTION
 )
 GO
 CREATE TABLE tblHoaDonBan(
@@ -50,7 +50,7 @@ CREATE TABLE tblHoaDonBan(
 	iMaNV INT NOT NULL,
 	dNgayTao DATETIME DEFAULT GETDATE() NOT NULL,
 	fTongTien FLOAT DEFAULT (0)
-	FOREIGN KEY(iMaNV) REFERENCES tblNhanVien(iMaNV)
+	FOREIGN KEY(iMaNV) REFERENCES tblNhanVien(iMaNV) ON DELETE NO ACTION
 )
 GO
 
@@ -61,9 +61,9 @@ CREATE TABLE tblChiTietHoaDonBan(
 	fThanhTien	FLOAT DEFAULT (0),
 	iBaoHanh	INT NOT NULL,
 	sGhiChu		NVARCHAR(256),
-	PRIMARY KEY(iMaHD, iMaMH),
-	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonban(iMaHD),
-	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH)
+	UNIQUE(iMaHD, iMaMH),
+	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonban(iMaHD)ON DELETE NO ACTION,
+	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH) ON DELETE NO ACTION
 )
 
 GO
@@ -101,7 +101,7 @@ AS
 		WHERE a.iMaMH = @iMaMH
 	END
 GO
-ALTER TRIGGER trDeleteChiTietNhap
+CREATE TRIGGER trDeleteChiTietNhap
 ON tblChiTietHoaDonNhap
 AFTER DELETE
 AS
@@ -149,14 +149,31 @@ AS
 		WHERE a.iMaMH = @iMaMH
 	END
 GO
+CREATE TRIGGER trDeleteChiTietBan
+ON tblChiTietHoaDonBan
+AFTER DELETE
+AS
+	BEGIN
+		DECLARE @iMaHD INT,
+				@fTongTien FLOAT
+		SELECT @iMaHD = iMaHD
+		FROM deleted;
+		SELECT @fTongTien = IsNull(SUM(fThanhTien),0) FROM tblChiTietHoaDonBan WHERE iMaHD = @iMaHD
+		UPDATE tblHoaDonban
+		SET fTongTien = @fTongTien
+		WHERE iMaHD = @iMaHD
+	END
+GO
 INSERT INTO tblLoaiHang(sTenHang)
 VALUES ('phu kien may tinh')
 GO
 INSERT INTO tblMatHang(iMaLH, sTenHH, fGiaBan)
-VALUES(1,'chuot', 250000)
+VALUES(1,'chuot', 250000),
+	  (1, N'Bàn phím cơ Corsair K70 RGB MK2 Silent sw',3450000);
 GO
 INSERT INTO tblNhanVien(sTen, sSDT)
-VALUES ('huy khanh', '0977919999')
+VALUES ('huy khanh', '0977919999'),
+		('khánh 2', '0977913011');
 GO
 INSERT tblHoaDonNhap(iMaNV, sNCC )
 VALUES (1,'ncc')
@@ -291,7 +308,6 @@ CREATE PROC prViewChiTietHDNhap
 AS
 begin
 	SELECT * FROM  vwChiTietHoaDonNhap
-END
 GO
 CREATE PROC prViewdeltailHDNhap(@iMaHD INT)
 AS
@@ -364,4 +380,73 @@ CREATE PROC prSearchHDban(@numberMin INT, @numberMax INT)
 AS
 	SELECT * FROM tblHoaDonBan
 	WHERE fTongTien between  @numberMin and @numberMax;
+GO
+SELECT * FROM tblChiTietHoaDonBan
+GO
+CREATE VIEW viewDetailsHDBan
+AS 
+	SELECT a.iMaHD, b.sTenHH, b.sMauSac, b.sKichThuoc, b.sMoTaChiTiet, a.iSoLuong, a.iBaoHanh, a.sGhiChu, a.fThanhTien
+	FROM tblChiTietHoaDonBan a
+	INNER JOIN tblMatHang b
+	ON a.iMaMH = b.iMaMH
+GO
+CREATE PROC prFindAllDetailsHDBan(@iMaHD INT)
+AS
+	
+	if @iMaHD = 0
+		SELECT * FROM viewDetailsHDBan
+	else
+		SELECT * FROM viewDetailsHDBan
+		WHERE iMaHD = @iMaHD
+GO
+CREATE PROC prInsertDetailsHDBan(@iMaHD INT, @iMaMH INT, @iSoLuong INT, @iBaoHanh INT, @sGhiChu NVARCHAR(100))
+AS
+	INSERT INTO tblChiTietHoaDonBan(iMaHD, iMaMH, iSoLuong, iBaoHanh, sGhiChu)
+	VALUES (@iMaHD, @imaMH, @iSoLuong, @iBaoHanh, @sGhiChu)
+
+GO
+CREATE PROC prSearchNCC(@sNCC NVARCHAR(100))
+AS
+	SELECT * FROM tblHoaDonNhap
+	WHERE sNCC  LIKE '%' +@sNCC+ '%'
+GO
+CREATE PROC prSoLuong(@iMaMH INT)
+AS
+	SELECT iSoLuong
+	FROM  tblMatHang
+	WHERE iMaMH = @iMaMH
+GO
+CREATE PROC prUpdateDetailHdBan(
+					@iMaHD INT,
+					@iMaMH INT,
+					@sTenMH NVARCHAR(100),
+					@iSoluong INT,
+					@iBaohanh INT, 
+					@sGhichu NVARCHAR(100))
+AS
+	DECLARE @iFirstSoLuong INT
+	DECLARE @iFirstMaMH INT
+
+	SELECT @iFirstMaMH = (SELECT iMaMH FROM tblMatHang WHERE sTenHH = @sTenMH)
+
+	SELECT @iFirstSoLuong = isNull(iSoLuong,0)
+	FROM tblChiTietHoaDonBan
+	WHERE iMaHD = @iMaHD AND iMaMH = @iFirstMaMH
+	
+	UPDATE tblChiTietHoaDonBan
+	SET iSoLuong = @iSoluong,
+		iBaoHanh = @iBaohanh,
+		sGhiChu = @sGhichu,
+		iMaMH = @iMaMH
+	WHERE iMaHD = @iMaHD AND iMaMH = @iFirstMaMH
+	
+	UPDATE tblMatHang
+	SET  iSoLuong +=  @iFirstSoLuong
+	FROM tblMatHang a
+	WHERE a.iMaMH = @iFirstMaMH
+GO
+CREATE PROC prDeleteChitietHD(@iMaHD INT, @sTenMH NVARCHAR(100))
+AS
+	DELETE FROM tblChiTietHoaDonBan
+	WHERE iMaHD = @iMaHD AND iMaMH = (SELECT iMaMH FROM tblMatHang WHERE sTenHH = @sTenMH)
 

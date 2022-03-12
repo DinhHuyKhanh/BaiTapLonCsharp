@@ -34,3 +34,49 @@ D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCshar
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\stdole.dll
 D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommonControls.dll
+<<<<<<< HEAD
+D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.Menu.resources
+<<<<<<< HEAD
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.AssemblyReference.cache
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.LoaiHangForm.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.MatHang.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.MatHangReport.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.Menu.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.Properties.Resources.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.GenerateResource.cache
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.CoreCompileInputs.cache
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.CopyComplete
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.exe.config
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.exe
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.pdb
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.exe
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.pdb
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\stdole.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\AxShockwaveFlashObjects.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.CrystalReports.Engine.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportSource.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.Shared.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.Windows.Forms.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\ShockwaveFlashObjects.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\CrystalDecisions.ReportAppServer.CommonControls.dll
+=======
+D:\tài liệu kì 2 năm 2\lập trình hướng sự kiện\BTL\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.ReportForm.resources
+>>>>>>> b72240171d2f4f92132befae4a666c416f5297fe
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.ReportForm.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMQuanLyHoaDonNhap.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMQuanLyChiTietHoaDonNhap.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMHoaDonBan.resources
+E:\lap trinh\project\C#\Bai_tap_lon\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMChiTietHoaDonBan.resources
+=======
+>>>>>>> f7adbc6c8675e8ab7bc80ff1e3b79bf497ac4b05
