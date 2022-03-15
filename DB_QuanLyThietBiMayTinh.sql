@@ -68,6 +68,8 @@ CREATE TABLE tblChiTietHoaDonBan(
 
 GO
 
+
+
 CREATE TRIGGER trThemChiTietNhap
 ON tblChiTietHoaDonNhap
 AFTER INSERT, UPDATE
@@ -308,6 +310,7 @@ CREATE PROC prViewChiTietHDNhap
 AS
 begin
 	SELECT * FROM  vwChiTietHoaDonNhap
+end
 GO
 CREATE PROC prViewdeltailHDNhap(@iMaHD INT)
 AS
