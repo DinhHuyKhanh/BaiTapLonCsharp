@@ -52,6 +52,8 @@ namespace QuanLyThietBiMayTinh
             this.textGiaNhap = new System.Windows.Forms.TextBox();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTonKho = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGRVdetailHDNhap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +88,7 @@ namespace QuanLyThietBiMayTinh
             this.cbloaihang.FormattingEnabled = true;
             this.cbloaihang.Location = new System.Drawing.Point(147, 64);
             this.cbloaihang.Name = "cbloaihang";
-            this.cbloaihang.Size = new System.Drawing.Size(121, 24);
+            this.cbloaihang.Size = new System.Drawing.Size(166, 24);
             this.cbloaihang.TabIndex = 14;
             this.cbloaihang.SelectedIndexChanged += new System.EventHandler(this.cbloaihang_SelectedIndexChanged);
             // 
@@ -104,13 +106,14 @@ namespace QuanLyThietBiMayTinh
             this.cbmathang.FormattingEnabled = true;
             this.cbmathang.Location = new System.Drawing.Point(612, 64);
             this.cbmathang.Name = "cbmathang";
-            this.cbmathang.Size = new System.Drawing.Size(121, 24);
+            this.cbmathang.Size = new System.Drawing.Size(168, 24);
             this.cbmathang.TabIndex = 5;
+            this.cbmathang.SelectedIndexChanged += new System.EventHandler(this.cbmathang_SelectedIndexChanged);
             // 
             // lbsoluong
             // 
             this.lbsoluong.AutoSize = true;
-            this.lbsoluong.Location = new System.Drawing.Point(51, 121);
+            this.lbsoluong.Location = new System.Drawing.Point(52, 102);
             this.lbsoluong.Name = "lbsoluong";
             this.lbsoluong.Size = new System.Drawing.Size(64, 17);
             this.lbsoluong.TabIndex = 6;
@@ -118,7 +121,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // soluong
             // 
-            this.soluong.Location = new System.Drawing.Point(147, 121);
+            this.soluong.Location = new System.Drawing.Point(148, 102);
             this.soluong.Name = "soluong";
             this.soluong.Size = new System.Drawing.Size(100, 22);
             this.soluong.TabIndex = 8;
@@ -234,7 +237,7 @@ namespace QuanLyThietBiMayTinh
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(522, 121);
+            this.label1.Location = new System.Drawing.Point(523, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 11;
@@ -242,7 +245,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // textGiaNhap
             // 
-            this.textGiaNhap.Location = new System.Drawing.Point(612, 121);
+            this.textGiaNhap.Location = new System.Drawing.Point(613, 102);
             this.textGiaNhap.Name = "textGiaNhap";
             this.textGiaNhap.Size = new System.Drawing.Size(100, 22);
             this.textGiaNhap.TabIndex = 12;
@@ -267,11 +270,30 @@ namespace QuanLyThietBiMayTinh
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "tồn kho";
+            // 
+            // txtTonKho
+            // 
+            this.txtTonKho.Location = new System.Drawing.Point(148, 143);
+            this.txtTonKho.Name = "txtTonKho";
+            this.txtTonKho.ReadOnly = true;
+            this.txtTonKho.Size = new System.Drawing.Size(100, 22);
+            this.txtTonKho.TabIndex = 18;
+            // 
             // FRMQuanLyChiTietHoaDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 531);
+            this.Controls.Add(this.txtTonKho);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.textGiaNhap);
@@ -320,5 +342,7 @@ namespace QuanLyThietBiMayTinh
         private System.Windows.Forms.TextBox textGiaNhap;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTonKho;
     }
 }

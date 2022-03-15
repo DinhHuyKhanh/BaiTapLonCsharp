@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonNhapDTO.cs" />
+    <Compile Include="FRMChiTietHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>FRMChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
       <DependentUpon>MatHangReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FRMChiTietHoaDonBan.resx">
+      <DependentUpon>FRMChiTietHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMHoaDonBan.resx">
       <DependentUpon>FRMHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,7 +163,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Reports\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

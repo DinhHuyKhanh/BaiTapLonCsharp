@@ -46,6 +46,7 @@ namespace QuanLyThietBiMayTinh
             this.btnReport = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grxlistHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@ namespace QuanLyThietBiMayTinh
             "\"\""});
             this.ListNV.Location = new System.Drawing.Point(187, 18);
             this.ListNV.Name = "ListNV";
-            this.ListNV.Size = new System.Drawing.Size(419, 24);
+            this.ListNV.Size = new System.Drawing.Size(537, 24);
             this.ListNV.Sorted = true;
             this.ListNV.TabIndex = 1;
             // 
@@ -93,7 +94,7 @@ namespace QuanLyThietBiMayTinh
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenNCC.Location = new System.Drawing.Point(187, 63);
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(419, 22);
+            this.txtTenNCC.Size = new System.Drawing.Size(537, 22);
             this.txtTenNCC.TabIndex = 3;
             // 
             // grxlistHoaDon
@@ -112,7 +113,7 @@ namespace QuanLyThietBiMayTinh
             this.grxlistHoaDon.Name = "grxlistHoaDon";
             this.grxlistHoaDon.RowHeadersWidth = 51;
             this.grxlistHoaDon.RowTemplate.Height = 24;
-            this.grxlistHoaDon.Size = new System.Drawing.Size(952, 319);
+            this.grxlistHoaDon.Size = new System.Drawing.Size(1070, 319);
             this.grxlistHoaDon.TabIndex = 4;
             // 
             // MaHD
@@ -191,7 +192,7 @@ namespace QuanLyThietBiMayTinh
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(425, 110);
+            this.btnCancel.Location = new System.Drawing.Point(559, 110);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
             this.btnCancel.TabIndex = 8;
@@ -202,7 +203,7 @@ namespace QuanLyThietBiMayTinh
             // btnReport
             // 
             this.btnReport.AutoSize = true;
-            this.btnReport.Location = new System.Drawing.Point(550, 110);
+            this.btnReport.Location = new System.Drawing.Point(681, 110);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(100, 30);
             this.btnReport.TabIndex = 9;
@@ -211,7 +212,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnXem
             // 
-            this.btnXem.Location = new System.Drawing.Point(675, 110);
+            this.btnXem.Location = new System.Drawing.Point(805, 110);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(100, 30);
             this.btnXem.TabIndex = 10;
@@ -221,7 +222,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(800, 110);
+            this.btnExit.Location = new System.Drawing.Point(937, 110);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 30);
             this.btnExit.TabIndex = 12;
@@ -229,11 +230,23 @@ namespace QuanLyThietBiMayTinh
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.AutoSize = true;
+            this.btnTimKiem.Location = new System.Drawing.Point(429, 110);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(100, 30);
+            this.btnTimKiem.TabIndex = 13;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // FRMQuanLyHoaDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 469);
+            this.ClientSize = new System.Drawing.Size(1077, 469);
+            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.btnReport);
@@ -274,5 +287,6 @@ namespace QuanLyThietBiMayTinh
         private System.Windows.Forms.DataGridViewTextBoxColumn NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn tongtien;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

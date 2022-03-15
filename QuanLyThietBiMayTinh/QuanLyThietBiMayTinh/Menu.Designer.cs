@@ -34,6 +34,7 @@ namespace QuanLyThietBiMayTinh
             this.btnHDN = new System.Windows.Forms.Button();
             this.buttonChiTietHDN = new System.Windows.Forms.Button();
             this.btnHDBan = new System.Windows.Forms.Button();
+            this.tbnChiTietHoaDonban = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoaiHang
@@ -48,7 +49,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnMatHang
             // 
-            this.btnMatHang.Location = new System.Drawing.Point(101, 190);
+            this.btnMatHang.Location = new System.Drawing.Point(316, 82);
             this.btnMatHang.Name = "btnMatHang";
             this.btnMatHang.Size = new System.Drawing.Size(153, 73);
             this.btnMatHang.TabIndex = 1;
@@ -58,7 +59,7 @@ namespace QuanLyThietBiMayTinh
             // 
             // btnHDN
             // 
-            this.btnHDN.Location = new System.Drawing.Point(316, 82);
+            this.btnHDN.Location = new System.Drawing.Point(101, 190);
             this.btnHDN.Name = "btnHDN";
             this.btnHDN.Size = new System.Drawing.Size(153, 73);
             this.btnHDN.TabIndex = 2;
@@ -86,11 +87,22 @@ namespace QuanLyThietBiMayTinh
             this.btnHDBan.UseVisualStyleBackColor = true;
             this.btnHDBan.Click += new System.EventHandler(this.btnHDBan_Click);
             // 
+            // tbnChiTietHoaDonban
+            // 
+            this.tbnChiTietHoaDonban.Location = new System.Drawing.Point(316, 305);
+            this.tbnChiTietHoaDonban.Name = "tbnChiTietHoaDonban";
+            this.tbnChiTietHoaDonban.Size = new System.Drawing.Size(153, 76);
+            this.tbnChiTietHoaDonban.TabIndex = 5;
+            this.tbnChiTietHoaDonban.Text = "Chi tiết Hóa đơn bán";
+            this.tbnChiTietHoaDonban.UseVisualStyleBackColor = true;
+            this.tbnChiTietHoaDonban.Click += new System.EventHandler(this.tbnChiTietHoaDonban_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 571);
+            this.ClientSize = new System.Drawing.Size(591, 457);
+            this.Controls.Add(this.tbnChiTietHoaDonban);
             this.Controls.Add(this.btnHDBan);
             this.Controls.Add(this.buttonChiTietHDN);
             this.Controls.Add(this.btnHDN);
@@ -109,5 +121,6 @@ namespace QuanLyThietBiMayTinh
         private System.Windows.Forms.Button btnHDN;
         private System.Windows.Forms.Button buttonChiTietHDN;
         private System.Windows.Forms.Button btnHDBan;
+        private System.Windows.Forms.Button tbnChiTietHoaDonban;
     }
 }

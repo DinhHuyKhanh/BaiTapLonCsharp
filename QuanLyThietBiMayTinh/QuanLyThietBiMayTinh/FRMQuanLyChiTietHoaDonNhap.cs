@@ -254,5 +254,21 @@ namespace QuanLyThietBiMayTinh
         {
             soluong.Text = textGiaNhap.Text = "";
         }
+
+        private void cbmathang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection Cnn = new SqlConnection(connectionString))
+            {
+                Cnn.Open();
+                SqlCommand Cmd = new SqlCommand("prSoLuong", Cnn);
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@iMaMH", cbmathang.SelectedValue.ToString());
+                var reader = Cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    txtTonKho.Text = reader["iSoLuong"].ToString();
+                }
+            }
+        }
     }
 }
