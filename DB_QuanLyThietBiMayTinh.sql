@@ -22,7 +22,11 @@ GO
 CREATE TABLE tblNhanVien(
 	iMaNV	INT IDENTITY(1,1) PRIMARY KEY,
 	sTen	NVARCHAR(100) NOT NULL,
-	sSDT	VARCHAR(15) UNIQUE
+	sSDT	VARCHAR(15) UNIQUE,
+	sDiachi nvarchar(200),
+	fPhucap float ,
+	fLuong float,
+	dNgaysinh date
 )
 GO
 CREATE TABLE tblHoaDonNhap(
@@ -309,7 +313,6 @@ GO
 CREATE PROC prViewChiTietHDNhap
 AS
 	SELECT * FROM  vwChiTietHoaDonNhap
-end
 GO
 CREATE PROC prViewdeltailHDNhap(@iMaHD INT)
 AS
