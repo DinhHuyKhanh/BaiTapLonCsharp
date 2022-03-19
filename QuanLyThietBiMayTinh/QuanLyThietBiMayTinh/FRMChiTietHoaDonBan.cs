@@ -70,7 +70,6 @@ namespace QuanLyThietBiMayTinh
             cbloaihang.DisplayMember = "sTenHang";
             cbloaihang.ValueMember = "iMaLH";
             cbloaihang.DataSource = dvLoaiHang;
-
         }
 
         private DataTable getLoaiHang()
@@ -297,5 +296,7 @@ namespace QuanLyThietBiMayTinh
                 }
             }
         }
+
+        
     }
 }

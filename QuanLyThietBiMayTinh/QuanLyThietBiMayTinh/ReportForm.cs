@@ -21,7 +21,6 @@ namespace QuanLyThietBiMayTinh
 
         private void MatHangReport_Load(object sender, EventArgs e)
         {
-            
         }
         public void showReport(string rpfileName, string rpFilter="", string rptitle="")
         {
@@ -31,7 +30,7 @@ namespace QuanLyThietBiMayTinh
             rpt.Load(path);
             //2.cập nhật nguồn dữ liệu
             TableLogOnInfo logOnInfo = new TableLogOnInfo();
-            logOnInfo.ConnectionInfo.ServerName = ".\\MASTER";
+            logOnInfo.ConnectionInfo.ServerName = ".\\SQLEXPRESS";
             logOnInfo.ConnectionInfo.DatabaseName = "db_QuanLyHangHoa";
 
             foreach (Table t in rpt.Database.Tables)
@@ -39,10 +38,11 @@ namespace QuanLyThietBiMayTinh
             //3.tác vụ
             if (!string.IsNullOrEmpty(rpFilter))
                 rpt.RecordSelectionFormula = rpFilter;
-            if (!string.IsNullOrEmpty(rpfileName))
-                rpt.SummaryInfo.ReportTitle = rpfileName;
+            if (!string.IsNullOrEmpty(rptitle))
+                rpt.SummaryInfo.ReportTitle = rptitle;
             //4.hiển thị
             crystalReportViewer1.ReportSource = rpt;
+            
         }
     }
 }

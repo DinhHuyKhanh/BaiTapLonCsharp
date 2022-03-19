@@ -96,6 +96,7 @@ namespace QuanLyThietBiMayTinh
                 DataView dvLoaiHang = new DataView(tblLoaiHang);
                 comboBox1.DisplayMember = "sTenHang";
                 comboBox1.DataSource = dvLoaiHang;
+                
             }
         }
 
@@ -216,14 +217,33 @@ namespace QuanLyThietBiMayTinh
                 filter += string.Format(" AND sMauSac like '%{0}%'", txtMau.Text);
             if (!string.IsNullOrEmpty(txtKichThuoc.Text.Trim()))
                 filter += string.Format(" AND sKichThuoc like '%{0}%'", txtKichThuoc.Text);
+            string a = Convert.ToString(txtGia.Text);
+            string[] arr = a.Split('-');
             if (!string.IsNullOrEmpty(txtGia.Text.Trim()))
-                filter += string.Format(" AND fGiaBan like '%{0}%'", txtGia.Text);
+            {
+                if (arr.Length > 1)
+                {
+                    filter += string.Format(" AND fGiaBan >= {0} and fGiaBan <= {1}", arr[0], arr[1]);
+                }
+                else
+                {
+                    filter += string.Format(" AND fGiaBan = {0}", arr[0]);
+                }
+            }
             btnBaoCao.Enabled = false;
             hienMatHang(filter);
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {
+            if(btnThem.Text=="Cập nhật")
+            {
+                DialogResult re = MessageBox.Show("Bạn có chắc chắn muốn thoát không, tất cả thông tin bạn vừa sửa sẽ không được lưu", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (re == DialogResult.No)
+                {
+                    return;
+                }
+            }
             txtTenMH.Text=txtMoTa.Text=txtMau.Text=txtKichThuoc.Text=txtGia.Text = string.Empty;
             btnThem.Text = "Thêm";
             btnXoa.Enabled =btnTim.Enabled=btnBaoCao.Enabled= true;
