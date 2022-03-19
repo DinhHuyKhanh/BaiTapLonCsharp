@@ -30,6 +30,7 @@ namespace QuanLyThietBiMayTinh
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.PrintOrderReport1 = new QuanLyThietBiMayTinh.Reports.PrintOrderReport();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -59,5 +60,6 @@ namespace QuanLyThietBiMayTinh
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Reports.PrintOrderReport PrintOrderReport1;
     }
 }

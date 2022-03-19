@@ -21,7 +21,6 @@ namespace QuanLyThietBiMayTinh
 
         private void MatHangReport_Load(object sender, EventArgs e)
         {
-            
         }
         public void showReport(string rpfileName, string rpFilter="", string rptitle="")
         {
@@ -43,6 +42,7 @@ namespace QuanLyThietBiMayTinh
                 rpt.SummaryInfo.ReportTitle = rptitle;
             //4.hiển thị
             crystalReportViewer1.ReportSource = rpt;
+            
         }
     }
 }

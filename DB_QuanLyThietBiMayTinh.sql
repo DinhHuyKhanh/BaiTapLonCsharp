@@ -16,7 +16,7 @@ CREATE TABLE tblMatHang(
 	sMoTaChiTiet NVARCHAR(100),
 	fGiaBan FLOAT NOT NULL,
 	iSoLuong int DEFAULT (0)
-	FOREIGN KEY (iMaLH) REFERENCES tblLoaiHang(iMaLH) ON DELETE NO ACTION
+	FOREIGN KEY (iMaLH) REFERENCES tblLoaiHang(iMaLH)
 )
 GO
 CREATE TABLE tblNhanVien(
@@ -31,7 +31,7 @@ CREATE TABLE tblHoaDonNhap(
 	sNCC		NVARCHAR(50) NOT NULL, 
 	dNgayTao	DATETIME DEFAULT GETDATE(),
 	fTongTien	INT DEFAULT (0)
-	FOREIGN KEY (iMaNV) REFERENCES tblNhanVien(iMaNV) ON DELETE NO ACTION
+	FOREIGN KEY (iMaNV) REFERENCES tblNhanVien(iMaNV) ON DELETE CASCADE
 )
 GO
 CREATE TABLE tblChiTietHoaDonNhap(
@@ -41,8 +41,8 @@ CREATE TABLE tblChiTietHoaDonNhap(
 	fDonGia FLOAT NOT NULL,
 	fThanhTien	FLOAT DEFAULT(0),
 	UNIQUE(iMaHD, iMaMH),
-	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonNhap(iMaHD) ON DELETE NO ACTION,
-	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH) ON DELETE NO ACTION
+	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonNhap(iMaHD) ON DELETE CASCADE,
+	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH)
 )
 GO
 CREATE TABLE tblHoaDonBan(
@@ -50,7 +50,7 @@ CREATE TABLE tblHoaDonBan(
 	iMaNV INT NOT NULL,
 	dNgayTao DATETIME DEFAULT GETDATE() NOT NULL,
 	fTongTien FLOAT DEFAULT (0)
-	FOREIGN KEY(iMaNV) REFERENCES tblNhanVien(iMaNV) ON DELETE NO ACTION
+	FOREIGN KEY(iMaNV) REFERENCES tblNhanVien(iMaNV)
 )
 GO
 
@@ -62,8 +62,8 @@ CREATE TABLE tblChiTietHoaDonBan(
 	iBaoHanh	INT NOT NULL,
 	sGhiChu		NVARCHAR(256),
 	UNIQUE(iMaHD, iMaMH),
-	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonban(iMaHD)ON DELETE NO ACTION,
-	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH) ON DELETE NO ACTION
+	FOREIGN KEY(iMaHD) REFERENCES tblHoaDonban(iMaHD) ON DELETE CASCADE,
+	FOREIGN KEY(iMaMH) REFERENCES tblMatHang(iMaMH)
 )
 
 GO
@@ -306,7 +306,6 @@ GO
 
 CREATE PROC prViewChiTietHDNhap
 AS
-begin
 	SELECT * FROM  vwChiTietHoaDonNhap
 GO
 CREATE PROC prViewdeltailHDNhap(@iMaHD INT)
@@ -385,7 +384,7 @@ SELECT * FROM tblChiTietHoaDonBan
 GO
 CREATE VIEW viewDetailsHDBan
 AS 
-	SELECT a.iMaHD, b.sTenHH, b.sMauSac, b.sKichThuoc, b.sMoTaChiTiet, a.iSoLuong, a.iBaoHanh, a.sGhiChu, a.fThanhTien
+	SELECT a.iMaHD, b.sTenHH, b.sMauSac, b.sKichThuoc, b.sMoTaChiTiet, a.iSoLuong, b.fGiaBan, a.iBaoHanh, a.sGhiChu, a.fThanhTien
 	FROM tblChiTietHoaDonBan a
 	INNER JOIN tblMatHang b
 	ON a.iMaMH = b.iMaMH

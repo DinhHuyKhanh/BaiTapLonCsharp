@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyThietBiMayTinh
@@ -123,6 +117,11 @@ namespace QuanLyThietBiMayTinh
         {
             try
             {
+                DialogResult re = MessageBox.Show("Bạn có chắc chắn muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (re == DialogResult.No)
+                {
+                    return;
+                }
                 using (SqlConnection Cnn = new SqlConnection(connectionString))
                 {
                     Cnn.Open();
@@ -196,6 +195,29 @@ namespace QuanLyThietBiMayTinh
           Form  f = new FRMChiTietHoaDonBan(iMaHD);
             f.Show();
             this.Close();
+        }
+        private Form findForm(string formName)
+        {
+            foreach (Form f in Application.OpenForms)
+                if (f.Name.Equals(formName))
+                    return f;
+            return null;
+        }
+
+        private void btnPrintOrder_Click_1(object sender, EventArgs e)
+        {
+
+            string sMaHD = grvHDBan.Rows[grvHDBan.CurrentRow.Index].Cells[0].Value.ToString();
+            string filter = "{viewDetailsHDBan.iMaHD} = " + sMaHD;
+            filter += " AND {tblHoaDonBan.iMaHD} = " + sMaHD;
+
+
+            ReportForm f = findForm("PrintOrderReport") as ReportForm;
+            if (f == null)
+                f = new ReportForm();
+            f.Show();
+            f.showReport("PrintOrderReport.rpt", filter, "Danh sách mặt hàng");
+            f.Activate();
         }
     }
 }
