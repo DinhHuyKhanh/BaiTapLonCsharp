@@ -1,0 +1,17 @@
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.exe.config
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csprojResolveAssemblyReference.cache
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMChiTietHoaDonBan.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMHoaDonBan.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMQuanLyChiTietHoaDonNhap.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FRMQuanLyHoaDonNhap.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.LoaiHangForm.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.MatHang.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.ReportForm.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.Menu.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.Properties.Resources.resources
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.csproj.GenerateResource.Cache
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.exe
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.pdb
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.exe
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh.pdb
+C:\Users\Be Thu Hong\Desktop\BaiTapLonCsharp\QuanLyThietBiMayTinh\QuanLyThietBiMayTinh\obj\Debug\QuanLyThietBiMayTinh.FormNhanVien.resources
