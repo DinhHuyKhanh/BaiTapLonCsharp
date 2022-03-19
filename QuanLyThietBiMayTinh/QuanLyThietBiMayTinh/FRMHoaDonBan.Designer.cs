@@ -45,6 +45,7 @@ namespace QuanLyThietBiMayTinh
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnXem = new System.Windows.Forms.Button();
+            this.btnPrintOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvHDBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).BeginInit();
@@ -208,11 +209,22 @@ namespace QuanLyThietBiMayTinh
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
+            // btnPrintOrder
+            // 
+            this.btnPrintOrder.Location = new System.Drawing.Point(492, 87);
+            this.btnPrintOrder.Name = "btnPrintOrder";
+            this.btnPrintOrder.Size = new System.Drawing.Size(148, 23);
+            this.btnPrintOrder.TabIndex = 36;
+            this.btnPrintOrder.Text = "in hóa đơn";
+            this.btnPrintOrder.UseVisualStyleBackColor = true;
+            this.btnPrintOrder.Click += new System.EventHandler(this.btnPrintOrder_Click_1);
+            // 
             // FRMHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 450);
+            this.Controls.Add(this.btnPrintOrder);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -254,5 +266,6 @@ namespace QuanLyThietBiMayTinh
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnPrintOrder;
     }
 }
