@@ -139,6 +139,11 @@ namespace QuanLyThietBiMayTinh
             try
             {
                 string sNCC = txtTenNCC.Text;
+                if( sNCC.Trim() == "")
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin nhà cung cấp muốn tìm kiếm");
+                    return;
+                }
                 using (SqlConnection Cnn = new SqlConnection(connectionString))
                 {
                     Cnn.Open();
