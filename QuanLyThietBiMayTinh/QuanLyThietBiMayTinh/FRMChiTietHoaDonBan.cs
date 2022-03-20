@@ -271,6 +271,11 @@ namespace QuanLyThietBiMayTinh
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult re = MessageBox.Show("Bạn có chắc chắn muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (re == DialogResult.No)
+            {
+                return;
+            }
             string strTenMH = grvChiTietHDBan.Rows[grvChiTietHDBan.CurrentRow.Index].Cells["sTenHH"].Value.ToString();
             using (SqlConnection Cnn = new SqlConnection(connectionString))
             {

@@ -73,5 +73,14 @@ namespace QuanLyThietBiMayTinh
             Form f = new FRMChiTietHoaDonBan(0);
             f.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form f = findForm("FormNhanVien");
+            if(f==null){
+                f = new FormNhanVien();
+                f.Show();
+            }
+        }
     }
 }

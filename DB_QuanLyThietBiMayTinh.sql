@@ -22,7 +22,11 @@ GO
 CREATE TABLE tblNhanVien(
 	iMaNV	INT IDENTITY(1,1) PRIMARY KEY,
 	sTen	NVARCHAR(100) NOT NULL,
-	sSDT	VARCHAR(15) UNIQUE
+	sSDT	VARCHAR(15) UNIQUE,
+	sDiachi nvarchar(200),
+	fPhucap float ,
+	fLuong float,
+	dNgaysinh date
 )
 GO
 CREATE TABLE tblHoaDonNhap(
@@ -109,13 +113,20 @@ AFTER DELETE
 AS
 	BEGIN
 		DECLARE @iMaHD INT,
-				@fTongTien FLOAT
-		SELECT @iMaHD = iMaHD
+				@fTongTien FLOAT,
+				@iSoLuong INT,
+				@iMaMH INT
+		SELECT @iMaHD = iMaHD,
+				@iSoLuong = iSoLuong,
+				@iMaMH = iMaMH
 		FROM deleted;
 		SELECT @fTongTien = IsNull(SUM(fThanhTien),0) FROM tblChiTietHoaDonNhap WHERE iMaHD = @iMaHD
 		UPDATE tblHoaDonNhap
 		SET fTongTien = @fTongTien
 		WHERE iMaHD = @iMaHD
+		UPDATE tblMatHang
+		SET iSoLuong -= @iSoLuong
+		WHERE iMaMH = @iMaMH
 	END
 GO
 CREATE TRIGGER trThemChiTietBan
@@ -157,14 +168,22 @@ AFTER DELETE
 AS
 	BEGIN
 		DECLARE @iMaHD INT,
-				@fTongTien FLOAT
-		SELECT @iMaHD = iMaHD
+				@fTongTien FLOAT,
+				@iSoLuong INT,
+				@iMaMH INT
+		SELECT @iMaHD = iMaHD,
+				@iMaMH = iMaMH,
+				@iSoLuong = iSoLuong
 		FROM deleted;
 		SELECT @fTongTien = IsNull(SUM(fThanhTien),0) FROM tblChiTietHoaDonBan WHERE iMaHD = @iMaHD
 		UPDATE tblHoaDonban
 		SET fTongTien = @fTongTien
 		WHERE iMaHD = @iMaHD
+		UPDATE tblMatHang
+		SET iSoLuong += @iSoLuong
+		WHERE iMaMH = @iMaMH
 	END
+
 GO
 INSERT INTO tblLoaiHang(sTenHang)
 VALUES ('phu kien may tinh')
@@ -309,7 +328,6 @@ GO
 CREATE PROC prViewChiTietHDNhap
 AS
 	SELECT * FROM  vwChiTietHoaDonNhap
-end
 GO
 CREATE PROC prViewdeltailHDNhap(@iMaHD INT)
 AS
@@ -409,7 +427,7 @@ AS
 GO
 CREATE PROC prSearchNCC(@sNCC NVARCHAR(100))
 AS
-	SELECT * FROM tblHoaDonNhap
+	SELECT * FROM vwHoaDonNhap
 	WHERE sNCC  LIKE '%' +@sNCC+ '%'
 GO
 CREATE PROC prSoLuong(@iMaMH INT)
