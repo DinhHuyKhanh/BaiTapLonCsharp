@@ -12,7 +12,7 @@ namespace QuanLyThietBiMayTinh
         String constr;
         public DataConnection()
         {
-            constr = "Data Source=DESKTOP-TKHK1KE\\SQLEXPRESS;Initial Catalog=db_QuanLyHangHoa;Integrated Security=True";
+            constr = "Data Source=.\\SQLEXPRESS;Initial Catalog=db_QuanLyHangHoa;Integrated Security=True";
         }
 
         public SqlConnection getConnect()
