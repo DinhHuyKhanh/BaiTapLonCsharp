@@ -230,7 +230,7 @@ namespace QuanLyThietBiMayTinh
                     filter += string.Format(" AND fGiaBan = {0}", arr[0]);
                 }
             }
-            btnBaoCao.Enabled = false;
+            //btnBaoCao.Enabled = false;
             hienMatHang(filter);
         }
 
@@ -276,9 +276,22 @@ namespace QuanLyThietBiMayTinh
                 filter += string.Format(" AND {1} like '*{0}*'", txtMau.Text, "{tblMatHang.sMauSac}");
             if (!string.IsNullOrEmpty(txtKichThuoc.Text.Trim()))
                 filter += string.Format(" AND {1} like '*{0}*'", txtKichThuoc.Text, "{tblMatHang.sKichThuoc}");
-            if (!string.IsNullOrEmpty(txtGia.Text.Trim()))
-                filter += string.Format(" AND {1} like '*{0}*'", txtGia.Text, "{tblMatHang.fGiaBan}");
+            //if (!string.IsNullOrEmpty(txtGia.Text.Trim()))
+            //    filter += string.Format(" AND {1} = {0}", txtGia.Text, "{tblMatHang.fGiaBan}");
 
+            string a = Convert.ToString(txtGia.Text);
+            string[] arr = a.Split('-');
+            if (!string.IsNullOrEmpty(txtGia.Text.Trim()))
+            {
+                if (arr.Length > 1)
+                {
+                    filter += string.Format(" AND {2} >= {0} and {2} <= {1}", arr[0], arr[1], "{tblMatHang.fGiaBan}");
+                }
+                else
+                {
+                    filter += string.Format(" AND {1} = {0}", arr[0], "{tblMatHang.fGiaBan}");
+                }
+            }
 
             ReportForm f = findForm("MatHangReport") as ReportForm;
             if (f == null)
