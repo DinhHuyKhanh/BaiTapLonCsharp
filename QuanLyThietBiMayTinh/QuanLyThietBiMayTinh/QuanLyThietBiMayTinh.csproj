@@ -101,6 +101,12 @@
     <Compile Include="MatHang.Designer.cs">
       <DependentUpon>MatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="menumdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menumdi.Designer.cs">
+      <DependentUpon>menumdi.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="NhanVienDTO.cs" />
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang.resx">
       <DependentUpon>MatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menumdi.resx">
+      <DependentUpon>menumdi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
